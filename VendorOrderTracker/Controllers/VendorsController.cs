@@ -63,5 +63,11 @@ namespace VendorOrderTracker.Controllers
       Vendor selectedVendor = Vendor.Find(id);
       return View(selectedVendor);
     }
+    [HttpPost("/vendors/delete")]
+      public ActionResult DeleteAll()
+      {
+        Vendor.ClearAll();
+        return View();
+      }
   }
 }

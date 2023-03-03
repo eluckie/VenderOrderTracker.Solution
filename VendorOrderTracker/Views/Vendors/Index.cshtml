@@ -17,8 +17,12 @@
     {
       <li><h5><a href='/vendors/@vendor.Id'>@vendor.Name (@vendor.Description)</a></h5></li>
     }
+    <br>
+    <form action="/vendors/delete" method="post">
+      <button type="submit" name="button">Delete all vendors</button>
+    </form>
   }
   </ul>
-  
+  <br>
   <p><a href="/vendors/new">Add a new vendor</a></p>
   <p><a href='/'>Return to main page</a></p>
