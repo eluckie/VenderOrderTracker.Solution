@@ -31,7 +31,7 @@
   {
   <p>@Model["order"].Description["bread"] loaves of bread</p>
   }
-  <h5>Order total: $</h5>
+  <h5>Order total: $@Model["order"].Total</h5>
   <h5>Vendor: @Model["vendor"].Name</h5>
 
   <p><a href='/vendors/@Model["vendor"].Id'>Return to @Model["vendor"].Name</a></p>
