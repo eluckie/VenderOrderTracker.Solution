@@ -78,5 +78,12 @@ namespace VendorOrderTracker.Tests
       int result = newOrder.CalculatePastryTotal(pastryQuantity);
       Assert.AreEqual(6, result);
     }
+    [TestMethod]
+    public void GetTotal_ReturnsTotalCostOfOrder_Int()
+    {
+      Order newOrder = new Order("OrderTitle", "3/3/23");
+      newOrder.AddOrderDescription(1, 1);
+      Assert.AreEqual(7, newOrder.Total);
+    }
   }
 }

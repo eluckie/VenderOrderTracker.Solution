@@ -34,6 +34,11 @@ namespace VendorOrderTracker.Models
     {
       Description.Add("pastries", pastryOrder);
       Description.Add("bread", breadOrder);
+      int pastryQuantity = this.Description["pastries"];
+      int breadQuantity = this.Description["bread"];
+      int pastryTotal = this.CalculatePastryTotal(pastryQuantity);
+      int breadTotal = this.CalculateBreadTotal(breadQuantity);
+      this.Total = pastryTotal + breadTotal;
     }
     public int CalculateBreadTotal(int breadCount)
     {
