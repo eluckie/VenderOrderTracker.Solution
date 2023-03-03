@@ -54,7 +54,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void AddOrder_AddsOrderToSpecifiedVendorsList_OrderList()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("OrderTitle");
       List<Order> orderList = new List<Order> { newOrder };
       Vendor newVendor = new Vendor("CompanyName", "CompanyDescription");
       newVendor.AddOrder(newOrder);

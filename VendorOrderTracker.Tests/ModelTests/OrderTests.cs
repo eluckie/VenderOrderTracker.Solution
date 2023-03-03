@@ -7,11 +7,16 @@ namespace VendorOrderTracker.Tests
   public class OrderTests
   {
     [TestMethod]
-    public void OrderrConstructor_CreatesInstanceOfOrderr_Order()
+    public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("OrderTitle");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
-
+    [TestMethod]
+    public void GetTitle_ReturnsOrderTitle_String()
+    {
+      Order newOrder = new Order("OrderTitle");
+      Assert.AreEqual("OrderTitle", newOrder.Title);
+    }
   }
 }
