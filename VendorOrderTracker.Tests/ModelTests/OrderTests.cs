@@ -44,5 +44,12 @@ namespace VendorOrderTracker.Tests
       List<Order> orderList = new List<Order> { newOrder1, newOrder2 };
       CollectionAssert.AreEqual(orderList, Order.GetAll());
     }
+    [TestMethod]
+    public void Find_ReturnsSpecificOrder_Order()
+    {
+      Order newOrder1 = new Order("OrderTitle1", "3/3/23");
+      Order newOrder2 = new Order("OrderTitle2", "3/3/23");
+      Assert.AreEqual(newOrder2, Order.Find(2));
+    }
   }
 }
