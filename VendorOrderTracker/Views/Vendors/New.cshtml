@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+<h3>Please fill out the requested information to add a new vendor</h3>
+<form action="/vendors" method="post">
+  <label for="name"><h5>Vendor Name:</h5></label>
+  <input id="name" name="name" type="text">
+  <br>
+  <h5>Vendor Type:</h5>
+  <label>
+    <input type="radio" name="description" value="business" checked>
+    Business
+  </label><br>
+  <label>
+    <input type="radio" name="description" value="personal">
+    Personal
+  </label><br>
+  <label>
+    <input type="radio" name="description" value="bulk business">
+    Bulk Business
+  </label><br>
+  <label>
+    <input type="radio" name="description" value="other">
+    Other
+  </label><br>
+  <br>
+  <button type="submit">Add vendor</button>
+</form>

@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+@using VendorOrderTracker.Models;
+
+  <h2>Vendors</h2>
+  <h5>Please select the vendor you would like to add to or view orders for</h5>
+  @if (@Model.Count == 0)
+  {
+    <h5>No vendors have been added yet</h5>
+  } 
+  @foreach (Vendor vendor in Model)
+  {
+    <p><a href='/vendors/@vendor.Id'>@vendor.Name (@vendor.Description)</a></p>
+  }
+  <p><a href='/'>Start over</a></p>
