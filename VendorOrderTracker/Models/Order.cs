@@ -9,6 +9,7 @@ namespace VendorOrderTracker.Models
     public int Id { get; }
     private static List<Order> _instances = new List<Order> {};
     public Dictionary<string, int> Description { get; set; }
+    public int Total { get; set; }
     public Order(string title, string date)
     {
       Title = title;
