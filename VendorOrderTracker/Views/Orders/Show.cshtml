@@ -1,0 +1,39 @@
+@{
+  Layout = "_Layout";
+}
+@using VendorOrderTracker.Models;
+
+  <h3>@Model["order"].Title - @Model["order"].Date</h3>
+  <h5>Order Details:</h5>
+
+  @if (@Model["order"].Description["pastries"] == 0)
+  {
+    <p>0 pastries</p>
+  }
+  @if (@Model["order"].Description["pastries"] == 1)
+  {
+    <p>1 pastry</p>
+  }
+  @if (@Model["order"].Description["pastries"] > 1)
+  {
+  <p>@Model["order"].Description["pastries"] pastries</p>
+  }
+
+  @if (@Model["order"].Description["bread"] == 0)
+  {
+    <p>0 loaves of bread</p>
+  }
+  @if (@Model["order"].Description["bread"] == 1)
+  {
+    <p>1 loaf of bread</p>
+  }
+  @if (@Model["order"].Description["bread"] > 1)
+  {
+  <p>@Model["order"].Description["bread"] loaves of bread</p>
+  }
+  <h5>Order total: $</h5>
+  <h5>Vendor: @Model["vendor"].Name</h5>
+
+  <p><a href='/vendors/@Model["vendor"].Id'>Return to @Model["vendor"].Name</a></p>
+  <p><a href='/vendors'>Return to vendor list</a></p>
+  <p><a href='/'>Return to Main Page</a></p>

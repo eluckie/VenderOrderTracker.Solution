@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-<h3>Add a new order to @Model.Name</h3>
+<h3>Add a new order for @Model.Name</h3>
 
 <form action="/vendors/@Model.Id/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
@@ -20,6 +20,6 @@
   <br>
   <button type='submit'>Add order</button>
 </form>
-
+<br>
 <p><a href='/vendors'>Return to vendor list</a></p>
 <p><a href='/'>Return to Main Page</a></p>
