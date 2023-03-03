@@ -6,10 +6,18 @@ namespace VendorOrderTracker.Models
   {
     public string Title { get; set; }
     public string Date { get; set; }
+    public int Id { get; }
+    private static List<Order> _instances = new List<Order> {};
     public Order(string title, string date)
     {
       Title = title;
       Date = date;
+      _instances.Add(this);
+      Id = _instances.Count;
+    }
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
