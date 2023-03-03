@@ -1,20 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName.Models;
+using VendorOrderTracker.Models;
 
-namespace ProjectName.Tests
+namespace VendorOrderTracker.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class OrderTests
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void OrderrConstructor_CreatesInstanceOfOrderr_Order()
     {
-      // Arrange
-
-      // Act
-      
-      // Assert 
-      Assert.AreEqual(ExpectedResult, CodeToTest);
+      Order newOrder = new Order();
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
   }

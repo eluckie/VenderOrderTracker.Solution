@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 
-namespace ProjectName.Models
+namespace VendorOrderTracker.Models
 {
-  public class ClassName
+  public class Order
   {
-    public string PropertyName { get; set; }
+    
   }
 }
