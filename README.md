@@ -33,15 +33,13 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* No known bugs.
 
 ## Stretch Plans
 
-* Allow order names to be clickable links where you are able to view that order's details
 * Add the ability to delete individual Vendors, all Orders belonging to a Vendor, individual Orders, or all Vendors
 * Add the ability to update Vendor or Order details
-* Add the ability for Pierre to note whether an order has been paid for or not
+* Add the ability to note whether an order has been paid for or not
 * Add custom CSS and JavaScript
 * Add search functionality
 
