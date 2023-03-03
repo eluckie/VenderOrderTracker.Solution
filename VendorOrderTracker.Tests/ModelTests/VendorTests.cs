@@ -61,5 +61,12 @@ namespace VendorOrderTracker.Tests
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(orderList, result);
     }
+    [TestMethod]
+    public void Delete_DeletesSpecificVendorFromVendorsList_Vendor()
+    {
+      Vendor newVendor = new Vendor("CompanyName", "CompanyDescription");
+      Vendor result = Vendor.Delete(1);
+      Assert.AreEqual(result, newVendor);
+    }
   }
 }
