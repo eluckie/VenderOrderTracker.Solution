@@ -25,7 +25,7 @@ namespace VendorOrderTracker.Controllers
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
-      Dictionary<string, object> model = new Dictionary<string, object>();
+      Dictionary<string, object> model = new Dictionary<string, object>{};
       Vendor selectedVendor = Vendor.Find(id);
       List<Order> vendorOrders = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
@@ -35,7 +35,7 @@ namespace VendorOrderTracker.Controllers
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string title, string date, int pastryCount, int breadCount)
     {
-      Dictionary<string, object> model = new Dictionary<string, object>();
+      Dictionary<string, object> model = new Dictionary<string, object>{};
       Vendor currentVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(title, date);
       newOrder.AddOrderDescription(pastryCount, breadCount);
@@ -44,6 +44,24 @@ namespace VendorOrderTracker.Controllers
       model.Add("orders", vendorOrders);
       model.Add("vendor", currentVendor);
       return View("Show", model);
+    }
+    [HttpPost("/vendors/{id}")]
+    public ActionResult Create(int id, string name, string description)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>{};
+      Vendor selectedVendor = Vendor.Find(id);
+      selectedVendor.Name = name;
+      selectedVendor.Description = description;
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
+      model.Add("orders", vendorOrders);
+      return View("Show", model);
+    }
+    [HttpGet("/vendors/{id}/update")]
+    public ActionResult Update(int id)
+    {
+      Vendor selectedVendor = Vendor.Find(id);
+      return View(selectedVendor);
     }
   }
 }

@@ -3,17 +3,26 @@
 }
 @using VendorOrderTracker.Models;
 
-<h3>Here are all the orders for @Model["vendor"].Name:</h3>
-  <ol>
-  @foreach (Order order in @Model["orders"])
+  @if (@Model["orders"].Count == 0)
   {
-    <li>
-      <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title (@order.Date)</a>
-      <br>Total - $@order.Total
-    </li>
+    <h3>@Model["vendor"].Name hasn't placed any orders yet.</h3>
   }
-  </ol>
 
-  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+  @if (@Model["orders"].Count > 0)
+  {
+    <h3>Here are all of @Model["vendor"].Name's orders:</h3>
+    <ol>
+      @foreach (Order order in @Model["orders"])
+      {
+        <li>
+          <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title (@order.Date)</a>
+          <br>Total - $@order.Total
+        </li>
+      }
+    </ol>
+  }
+
+  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order to @Model["vendor"].Name</a></p>
+  <p><a href='/vendors/@Model["vendor"].Id/update'>Update @Model["vendor"].Name's information</a></p>
   <p><a href='/vendors'>Return to vendor list</a></p>
-  <p><a href='/'>Return to Main Page</a></p>
+  <p><a href='/'>Return to main page</a></p>
