@@ -51,5 +51,14 @@ namespace VendorOrderTracker.Tests
       Order newOrder2 = new Order("OrderTitle2", "3/3/23");
       Assert.AreEqual(newOrder2, Order.Find(2));
     }
+    [TestMethod]
+    public void AddOrderDescription_AddsDescriptionToSpecifiedOrdersDictionary_Dictionary()
+    {
+      Order newOrder = new Order("OrderTitle", "3/3/23");
+      Dictionary<string, int> orderDescription = new Dictionary<string, int> { {"pastries", 2 }, { "bread", 2 } };
+      newOrder.AddOrderDescription(2, 2);
+      Dictionary<string, int> result = newOrder.Description;
+      CollectionAssert.AreEqual(orderDescription, result);
+    }
   }
 }
