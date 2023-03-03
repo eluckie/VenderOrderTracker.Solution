@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+<h3>Update order quantities for @Model["vendor"].Name's @Model["order"].Title</h3>
+
+<form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id' method="post">
+  <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
+  <input id="orderId" name="orderId" type="hidden" value='@Model["order"].Id'>
+  <label for="pastryCount">Pastry Quantity</label>
+  <input id="pastryCount" name="pastryCount" type="number">
+  <br>
+  <label for="breadCount">Bread Quantity</label>
+  <input id="breadCount" name="breadCount" type="number">
+  <br>
+  <button type='submit'>Update order</button>
+</form>
+<br>
+<p><a href='/vendors/@Model["vendor"].Id'>Return to @Model["vendor"].Name</a></p>
+<p><a href='/vendors'>Return to vendor list</a></p>
+<p><a href='/'>Return to main page</a></p>

@@ -1,34 +1,33 @@
 @{
   Layout = "_Layout";
 }
-@using VendorOrderTracker.Models;
 
-  <h3>Please fill out the updated information for @Model.Name</h3>
-  <form action="/vendors/{id}" method="post">
-    <input id="id" name="id" value="@Model.Id" type="hidden">
-    <label for="name"><h5>Vendor Name:</h5></label>
-    <input id="name" name="name" type="text">
-    <br>
-    <h5>Vendor Type:</h5>
-    <label>
-      <input type="radio" name="description" value="business" checked>
-      Business
-    </label><br>
-    <label>
-      <input type="radio" name="description" value="personal">
-      Personal
-    </label><br>
-    <label>
-      <input type="radio" name="description" value="bulk business">
-      Bulk Business
-    </label><br>
-    <label>
-      <input type="radio" name="description" value="other">
-      Other
-    </label><br>
-    <br>
-    <button type="submit">Update @Model.Name</button>
-  </form>
+<h3>Please fill out the updated information for @Model.Name</h3>
+<form action="/vendors/{id}" method="post">
+  <input id="id" name="id" value="@Model.Id" type="hidden">
+  <label for="name"><h5>Vendor Name:</h5></label>
+  <input id="name" name="name" type="text">
   <br>
-  <p><a href='/vendors'>Return to vendor list</a></p>
-  <p><a href='/'>Return to main page</a></p>
+  <h5>Vendor Type:</h5>
+  <label>
+    <input type="radio" name="description" value="business" checked>
+    Business
+  </label><br>
+  <label>
+    <input type="radio" name="description" value="personal">
+    Personal
+  </label><br>
+  <label>
+    <input type="radio" name="description" value="bulk business">
+    Bulk Business
+  </label><br>
+  <label>
+    <input type="radio" name="description" value="other">
+    Other
+  </label><br>
+  <br>
+  <button type="submit">Update @Model.Name</button>
+</form>
+<br>
+<p><a href='/vendors'>Return to vendor list</a></p>
+<p><a href='/'>Return to main page</a></p>
