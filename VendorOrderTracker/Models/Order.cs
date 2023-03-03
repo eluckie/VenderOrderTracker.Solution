@@ -48,5 +48,18 @@ namespace VendorOrderTracker.Models
         return (remainder * 5) + ((adjustedCount / 3) * 10);
       }
     }
+      public int CalculatePastryTotal(int pastryCount)
+      {
+        if(pastryCount % 4 == 0)
+      {
+        return ((pastryCount / 4) * 6);
+      }
+      else
+      {
+        int remainder = pastryCount % 4;
+        int adjustedCount = pastryCount - remainder;
+        return (remainder * 2) + ((adjustedCount / 4) * 6);
+      }
+    }
   }
 }
