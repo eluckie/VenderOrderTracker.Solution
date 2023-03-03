@@ -60,5 +60,14 @@ namespace VendorOrderTracker.Tests
       Dictionary<string, int> result = newOrder.Description;
       CollectionAssert.AreEqual(orderDescription, result);
     }
+    [TestMethod]
+    public void CalculateBreadTotal_ReturnsCostOfBreadInOrder_Int()
+    {
+      Order newOrder = new Order("OrderTitle", "3/3/23");
+      newOrder.AddOrderDescription(2, 3);
+      int breadQuantity = newOrder.Description["bread"];
+      int result = newOrder.CalculateBreadTotal(breadQuantity);
+      Assert.AreEqual(10, result);
+    }
   }
 }

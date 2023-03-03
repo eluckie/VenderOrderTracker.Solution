@@ -35,5 +35,18 @@ namespace VendorOrderTracker.Models
       Description.Add("pastries", pastryOrder);
       Description.Add("bread", breadOrder);
     }
+    public int CalculateBreadTotal(int breadCount)
+    {
+      if(breadCount % 3 == 0)
+      {
+        return ((breadCount / 3) * 10);
+      }
+      else
+      {
+        int remainder = breadCount % 3;
+        int adjustedCount = breadCount - remainder;
+        return (remainder * 5) + ((adjustedCount / 3) * 10);
+      }
+    }
   }
 }
