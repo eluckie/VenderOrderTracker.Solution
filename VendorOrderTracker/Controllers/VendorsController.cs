@@ -70,10 +70,10 @@ namespace VendorOrderTracker.Controllers
       return View();
     }
     [HttpPost("/vendors/delete")]
-    public ActionResult Delete(int id)
+    public ActionResult Delete(int vendorId)
     {
-      Vendor selectedVendor = Vendor.Find(id);
-      Vendor.Delete(id);
+      Vendor selectedVendor = Vendor.Find(vendorId);
+      Vendor.Delete(vendorId);
       return View(selectedVendor);
     }
   }

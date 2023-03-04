@@ -27,7 +27,11 @@
   <p><a href='/vendors'>Return to vendor list</a></p>
   <p><a href='/'>Return to main page</a></p>
 
+  <form action="/orders/deleteall" method="post">
+    <input name="vendorId" type="hidden" value='@Model["vendor"].Id'>
+    <button type="submit" name="button">Delete all of @Model["vendor"].Name's orders</button>
+  </form>
   <form action="/vendors/delete" method="post">
-    <input name="id" type="hidden" value='@Model["vendor"].Id'>
+    <input name="vendorId" type="hidden" value='@Model["vendor"].Id'>
     <button type="submit" name="button">Delete @Model["vendor"].Name</button>
   </form>
