@@ -39,5 +39,9 @@ namespace VendorOrderTracker.Models
       _instances.Remove(vendor);
       return vendor;
     }
+    public void RemoveOrder(Order order)
+    {
+      Orders.Remove(order);
+    }
   }
 }
