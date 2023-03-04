@@ -66,5 +66,11 @@ namespace VendorOrderTracker.Models
         return (remainder * 2) + ((adjustedCount / 4) * 6);
       }
     }
+    public static Order Delete(int searchId)
+    {
+      Order order = Order.Find(searchId);
+      _instances.Remove(order);
+      return order;
+    }
   }
 }

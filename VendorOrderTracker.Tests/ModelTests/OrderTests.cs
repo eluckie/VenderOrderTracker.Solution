@@ -85,5 +85,12 @@ namespace VendorOrderTracker.Tests
       newOrder.AddOrderDescription(1, 1);
       Assert.AreEqual(7, newOrder.Total);
     }
+    [TestMethod]
+    public void Delete_DeletesSpecificOrderFromOrderList_Order()
+    {
+      Order newOrder = new Order("OrderTitle", "3/3/23");
+      Order result = Order.Delete(1);
+      Assert.AreEqual(result, newOrder);
+    }
   }
 }
