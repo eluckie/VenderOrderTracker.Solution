@@ -37,8 +37,8 @@ namespace VendorOrderTracker.Controllers
       model.Add("vendor", vendor);
       return View("Show", model);
     }
-    [HttpGet("/vendors/{vendorId}/orders/{orderId}/update")]
-    public ActionResult Update(int vendorId, int orderId)
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}/updateqty")]
+    public ActionResult UpdateQty(int vendorId, int orderId)
     {
       Order order = Order.Find(orderId);
       Vendor vendor = Vendor.Find(vendorId);
@@ -62,6 +62,27 @@ namespace VendorOrderTracker.Controllers
       Vendor.DeleteAllOrders(vendorId);
       Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
+    }
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}/updatestatus")]
+    public ActionResult UpdateStatus(int vendorId, int orderId)
+    {
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
+    }
+    [HttpPost("/orders/statuschange")]
+    public ActionResult StatusChange(int vendorId, int orderId, string orderStatus)
+    {
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      order.Status = orderStatus;
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
     }
   }
 }
