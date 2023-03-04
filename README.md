@@ -18,22 +18,29 @@
 This webpage acts as a tool to help a bakery owner organize and keep track of their vendors and vendor orders. From the homepage, the owner has clickable links to add a vendor, add an order, view all vendors, and update an invoice's status.
 
 **Add a new vendor:** takes the user to a form where they can enter the vendor's name, and select which type of vendor they are - business, personal, bulk business, or other. From here, they may either enter the information & click _add vendor_, or there is also clickable links to view the vendor list or return to homepage
+
 **Add a new order:** takes the user to the list of vendors. They must select the vendor they'd like to add an order for
+
 **View all vendors:** takes the user to the list of vendors. From there, they may choose to add a new vendor or return to the main page
+
 **Return to main page:** takes the user back to the homepage
+
 **Update an invoice status:** {WORK IN PROGRESS}
 
 Once at least one vendor has been added, a list of vendors will populate on the view all vendors page. There will also be a button that says _delete all vendors_ which clears the vendor list in one click
 
 From the vendor list, the user may click on the specific vendor they wish to view/edit. That will lead them to the specific vendor's page. On that page they may add an order to the specified vendor, update the specified vendor's name or type, return to vendor list, return to main page, or delete the selected vendor in one click.
+
 **Add a new order to {Vendor}:** takes the user to a form where they can fill out the order title, date, pastry quantity, and bread quantity of the order. There is also an _add order_ button on this page. From this page, they may also select to cancel the new order, return to the vendor list, return to the main page.
 * canceling the order redirects them back to the specified Vendor's page with their list of current orders
+
 **Update {Vendor's} information:** takes the user to a form where they can fill out a new vendor name &/or update the vendor's type. Once filled out, they can click _update {Vendor}_ which will update the vendor with the new information and take them back to the vendor's page with their list of current orders. They also have clickable links to cancel the update, return to vendor list, or return to the main page
-* they may also choose to cancel the update which will take them back to the vendor's page with their list of current orders
+* if they choose to cancel the update which will take them back to the vendor's page with their list of current orders
 
 Once at least one order is added to the vendor, the vendor's main page will populate with a numbered list of all orders showing the order title and date (clickable) and the order's total. From there, users may choose to add a new order, update the vendor's information, return to vendor list, return to main page. There is also a button to _delete {Vendor}_
 * clicking the _delete {Vendor}_ button deletes the vendor and all their orders in one click
 Clicking on a specific order directs the user to the specified order's main page where they are able to view the order details such as the title, date, quantity of each item in the order, order total, and vendor name. From there, the user may choose to update order quantities, return to {Vendor}, return to the vendor list or return to the main page. There is also a button to _delete this order_. This button will delete the specified order in one click
+
 **Update order quantities:** takes the user to a form where they may enter new pastry & bread order quantities & click update order. Updating the order redirects them to the specified order's details page
 * They may also choose to instead return to the vendor's main page, return to the full vendor list, or return to the main page
 
