@@ -11,6 +11,7 @@
 * Dotnet
 * MSTest
 * Markdown
+* CSS
 * Git
 
 ## Description
@@ -53,7 +54,33 @@ Clicking on a specific order directs the user to the specified order's main page
 * from there, the user may choose to return to the specified order's details, return to the vendor, return to the vendor list, or return to the main page
 
 ### Paths
-{WORK IN PROGRESS}
+_**/**_ splash page
+
+_**/vendors**_ list of vendors & their orders
+
+_**/vendors/new**_ form to add a vendor
+
+_**/vendors/{id}**_ specified vendor's information when they haven't placed an order yet
+
+_**/vendors/{id}/orders**_ specified vendor's list of orders
+
+_**/vendors/{id}/update**_ form to update specified vendor's information
+
+_**/vendors/delete**_ confirmation that specified vendor has been deleted
+
+_**/vendors/{id}/orders/new**_ form to add a new order to vendor
+
+_**/vendors/{vendorid}/orders/{orderid}**_ order details for specified order
+
+_**/vendors/{vendorid}/orders/{orderid}/updateqty**_ update amounts in specified order's details
+
+_**/orders/delete**_ delete specified order from vendor
+
+_**/orders/deleteall**_ delete all orders from specified vendor
+
+_**/vendors/{vendorid}/orders/{orderid}/updatestatus**_ form to update specified order's status paid/unpaid
+
+_**/orders/statuschange**_ confirmation of order status update
 
 ## Setup/Installation Requirements
 
@@ -74,7 +101,6 @@ Clicking on a specific order directs the user to the specified order's main page
 
 ## Stretch Plans
 
-* Add custom CSS and JavaScript
 * Add search functionality
 * Add more orderable items
 

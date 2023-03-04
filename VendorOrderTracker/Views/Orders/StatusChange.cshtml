@@ -3,7 +3,7 @@
 }
 
 <h3>@Model["order"].Title's status has been updated</h3>
-<h5>New status: @Model["order"].Status</h5>
+<h5 id="status">New status: @Model["order"].Status</h5>
 
 <p><a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id'>Return to @Model["order"].Title</a></p>
 <p><a href='/vendors/@Model["vendor"].Id'>Return to @Model["vendor"].Name</a></p>
