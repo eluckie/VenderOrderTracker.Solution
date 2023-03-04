@@ -8,14 +8,15 @@
   <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
   <input id="orderId" name="orderId" type="hidden" value='@Model["order"].Id'>
   <label for="pastryCount">Pastry Quantity</label>
-  <input id="pastryCount" name="pastryCount" type="number">
+  <input id="pastryCount" name="pastryCount" type="number" required="required">
   <br>
   <label for="breadCount">Bread Quantity</label>
-  <input id="breadCount" name="breadCount" type="number">
+  <input id="breadCount" name="breadCount" type="number" required="required">
   <br>
   <button type='submit'>Update order</button>
 </form>
 <br>
+<p><a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id'>Cancel update</a></p>
 <p><a href='/vendors/@Model["vendor"].Id'>Return to @Model["vendor"].Name</a></p>
 <p><a href='/vendors'>Return to vendor list</a></p>
 <p><a href='/'>Return to main page</a></p>

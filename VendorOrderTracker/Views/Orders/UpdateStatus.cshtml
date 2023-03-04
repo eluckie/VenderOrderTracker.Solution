@@ -7,7 +7,8 @@
 <form action='/orders/statuschange' method="post">
   <input id="vendorId" name="vendorId" type="hidden" value='@Model["vendor"].Id'>
   <input id="orderId" name="orderId" type="hidden" value='@Model["order"].Id'>
-  <input type="radio" name="orderStatus" value="UNPAID">
+  <label>
+    <input type="radio" name="orderStatus" value="UNPAID">
     Unpaid
   </label>
   <label>

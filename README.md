@@ -69,7 +69,6 @@ Clicking on a specific order directs the user to the specified order's main page
 
 ## Known Bugs
 
-* If forms are not fully filled out, it changes the unfilled input to a blank space
 * If deleting an order from the list and then attempting to view order details for a later order, path does not update properly to account for 1 less order
 * ^ same issue with deleting a vendor from the list
 
@@ -77,7 +76,7 @@ Clicking on a specific order directs the user to the specified order's main page
 
 * Add custom CSS and JavaScript
 * Add search functionality
-* Have Order.Title autopopulate like Order {Id}
+* Add more orderable items
 
 ## License
 
