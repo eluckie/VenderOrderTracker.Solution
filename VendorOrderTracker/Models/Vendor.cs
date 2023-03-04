@@ -43,5 +43,10 @@ namespace VendorOrderTracker.Models
     {
       Orders.Remove(order);
     }
+    public static void DeleteAllOrders(int searchId)
+    {
+      Vendor vendor = Vendor.Find(searchId);
+      vendor.Orders.Clear();
+    }
   }
 }
