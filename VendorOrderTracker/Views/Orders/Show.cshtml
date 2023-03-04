@@ -1,40 +1,44 @@
 @{
   Layout = "_Layout";
 }
-@using VendorOrderTracker.Models;
 
-  <h3>@Model["order"].Title - @Model["order"].Date</h3>
-  <h5>Order Details:</h5>
+<h3>@Model["order"].Title - @Model["order"].Date</h3>
+<h5>Order Details:</h5>
 
-  @if (@Model["order"].Description["pastries"] == 0)
-  {
-    <p>0 pastries</p>
-  }
-  @if (@Model["order"].Description["pastries"] == 1)
-  {
-    <p>1 pastry</p>
-  }
-  @if (@Model["order"].Description["pastries"] > 1)
-  {
-  <p>@Model["order"].Description["pastries"] pastries</p>
-  }
+@if (@Model["order"].Description["pastries"] == 0)
+{
+  <p>0 pastries</p>
+}
+@if (@Model["order"].Description["pastries"] == 1)
+{
+  <p>1 pastry</p>
+}
+@if (@Model["order"].Description["pastries"] > 1)
+{
+<p>@Model["order"].Description["pastries"] pastries</p>
+}
 
-  @if (@Model["order"].Description["bread"] == 0)
-  {
-    <p>0 loaves of bread</p>
-  }
-  @if (@Model["order"].Description["bread"] == 1)
-  {
-    <p>1 loaf of bread</p>
-  }
-  @if (@Model["order"].Description["bread"] > 1)
-  {
+@if (@Model["order"].Description["bread"] == 0)
+{
+  <p>0 loaves of bread</p>
+}
+@if (@Model["order"].Description["bread"] == 1)
+{
+  <p>1 loaf of bread</p>
+}
+@if (@Model["order"].Description["bread"] > 1)
+{
   <p>@Model["order"].Description["bread"] loaves of bread</p>
-  }
-  <h5>Order total: $@Model["order"].Total</h5>
-  <h5>Vendor: @Model["vendor"].Name</h5>
+}
+<h5>Order total: $@Model["order"].Total</h5>
+<h5>Vendor: @Model["vendor"].Name</h5>
 
-  <p><a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/update'>Update order information</a></p>
-  <p><a href='/vendors/@Model["vendor"].Id'>Return to @Model["vendor"].Name</a></p>
-  <p><a href='/vendors'>Return to vendor list</a></p>
-  <p><a href='/'>Return to main page</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/update'>Update order quantities</a></p>
+<p><a href='/vendors/@Model["vendor"].Id'>Return to @Model["vendor"].Name</a></p>
+<p><a href='/vendors'>Return to vendor list</a></p>
+<p><a href='/'>Return to main page</a></p>
+<form action="/orders/delete" method="post">
+  <input name="orderId" type="hidden" value='@Model["order"].Id'>
+  <input name="vendorId" type="hidden" value='@Model["vendor"].Id'>
+  <button type="submit" name="button">Delete this order</button>
+</form>
