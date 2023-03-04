@@ -25,7 +25,7 @@ This webpage acts as a tool to help a bakery owner organize and keep track of th
 
 **Return to main page:** takes the user back to the homepage
 
-**Update an invoice status:** {WORK IN PROGRESS}
+**Update an invoice status:** takes the user to the list of vendors. From there they must choose the vendor with an order they wish to update
 ##
 
 Once at least one vendor has been added, a list of vendors will populate on the view all vendors page. There will also be a button that says _delete all vendors_ which clears the vendor list in one click

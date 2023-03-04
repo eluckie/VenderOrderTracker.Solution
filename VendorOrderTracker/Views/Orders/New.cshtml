@@ -7,7 +7,7 @@
 <form action="/vendors/@Model.Id/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
   <label for="date">Order Date</label>
-  <input id="date" name="date" type="date">
+  <input id="date" name="date" type="date" required="required">
   <br>
   <label for="pastryCount">Pastry Quantity</label>
   <input id="pastryCount" name="pastryCount" type="number" required="required">
