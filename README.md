@@ -26,6 +26,7 @@ This webpage acts as a tool to help a bakery owner organize and keep track of th
 **Return to main page:** takes the user back to the homepage
 
 **Update an invoice status:** {WORK IN PROGRESS}
+##
 
 Once at least one vendor has been added, a list of vendors will populate on the view all vendors page. There will also be a button that says _delete all vendors_ which clears the vendor list in one click
 
@@ -36,6 +37,7 @@ From the vendor list, the user may click on the specific vendor they wish to vie
 
 **Update {Vendor's} information:** takes the user to a form where they can fill out a new vendor name &/or update the vendor's type. Once filled out, they can click _update {Vendor}_ which will update the vendor with the new information and take them back to the vendor's page with their list of current orders. They also have clickable links to cancel the update, return to vendor list, or return to the main page
 * if they choose to cancel the update which will take them back to the vendor's page with their list of current orders
+##
 
 Once at least one order is added to the vendor, the vendor's main page will populate with a numbered list of all orders showing the order title and date (clickable) and the order's total. From there, users may choose to add a new order, update the vendor's information, return to vendor list, return to main page. There is also a button to _delete {Vendor}_
 * clicking the _delete {Vendor}_ button deletes the vendor and all their orders in one click
@@ -62,10 +64,11 @@ Clicking on a specific order directs the user to the specified order's main page
 ## Known Bugs
 
 * If forms are not fully filled out, it changes the unfilled input to a blank space
+* If deleting an order from the list and then attempting to view order details for a later order, path does not update properly to account for 1 less order
+* ^ same issue with deleting a vendor from the list
 
 ## Stretch Plans
 
-* Add the ability to delete all Orders belonging to a Vendor
 * Add the ability to note whether an order has been paid for or not
 * Add custom CSS and JavaScript
 * Add search functionality
