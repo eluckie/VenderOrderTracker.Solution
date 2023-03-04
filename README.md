@@ -69,7 +69,6 @@ Clicking on a specific order directs the user to the specified order's main page
 
 ## Stretch Plans
 
-* Add the ability to note whether an order has been paid for or not
 * Add custom CSS and JavaScript
 * Add search functionality
 * Have Order.Title autopopulate like Order {Id}
