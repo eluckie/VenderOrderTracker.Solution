@@ -10,10 +10,12 @@ namespace VendorOrderTracker.Models
     private static List<Order> _instances = new List<Order> {};
     public Dictionary<string, int> Description { get; set; }
     public int Total { get; set; }
-    public Order(string title, string date)
+    public string Status { get; set; }
+    public Order(string title, string date, string status)
     {
       Title = title;
       Date = date;
+      Status = status;
       _instances.Add(this);
       Id = _instances.Count;
       Description = new Dictionary<string, int> {};

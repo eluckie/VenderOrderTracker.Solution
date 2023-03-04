@@ -54,7 +54,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void AddOrder_AddsOrderToSpecifiedVendorsList_OrderList()
     {
-      Order newOrder = new Order("OrderTitle", "3/3/23");
+      Order newOrder = new Order("OrderTitle", "3/3/23", "unpaid");
       List<Order> orderList = new List<Order> { newOrder };
       Vendor newVendor = new Vendor("CompanyName", "CompanyDescription");
       newVendor.AddOrder(newOrder);
@@ -71,8 +71,8 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void RemoveOrder_RemovesOrderToSpecifiedVendorsList_OrderList()
     {
-      Order newOrder1 = new Order("OrderTitle1", "3/3/23");
-      Order newOrder2 = new Order("OrderTitle2", "3/3/23");
+      Order newOrder1 = new Order("OrderTitle1", "3/3/23", "unpaid");
+      Order newOrder2 = new Order("OrderTitle2", "3/3/23", "unpaid");
       List<Order> orderList = new List<Order> { newOrder2 };
       Vendor newVendor = new Vendor("CompanyName", "CompanyDescription");
       newVendor.AddOrder(newOrder1);
@@ -85,8 +85,8 @@ namespace VendorOrderTracker.Tests
     public void DeleteAllOrders_DeletesAllOrdersFromSpecifiedVendor_OrderList()
     {
       Vendor newVendor = new Vendor("CompanyName", "CompanyDescription");
-      Order newOrder = new Order("OrderTitle", "3/3/23");
-      Order newOrder2 = new Order("OrderTitle2", "3/3/23");
+      Order newOrder = new Order("OrderTitle", "3/3/23", "unpaid");
+      Order newOrder2 = new Order("OrderTitle2", "3/3/23", "unpaid");
       newVendor.AddOrder(newOrder);
       newVendor.AddOrder(newOrder2);
       Vendor.DeleteAllOrders(1);
