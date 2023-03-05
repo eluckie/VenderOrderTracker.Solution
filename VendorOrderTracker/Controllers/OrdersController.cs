@@ -27,11 +27,13 @@ namespace VendorOrderTracker.Controllers
     {
       Order order = Order.Find(orderId);
       Vendor vendor = Vendor.Find(vendorId);
-      int pastryTotal = order.CalculatePastryTotal(pastryCount);
-      int breadTotal = order.CalculateBreadTotal(breadCount);
-      order.Total = pastryTotal + breadTotal;
       order.Description["pastries"] = pastryCount;
       order.Description["bread"] = breadCount;
+      int pastryTotal = order.CalculatePastryTotal(pastryCount);
+      int breadTotal = order.CalculateBreadTotal(breadCount);
+      order.Description["pastryCount"] = pastryTotal;
+      order.Description["breadCount"] = breadTotal;
+      order.Total = pastryTotal + breadTotal;
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("order", order);
       model.Add("vendor", vendor);

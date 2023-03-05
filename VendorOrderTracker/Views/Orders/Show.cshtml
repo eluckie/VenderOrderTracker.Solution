@@ -1,37 +1,38 @@
 @{
   Layout = "_Layout";
 }
+@using VendorOrderTracker.Models;
 
 <h3>@Model["order"].Title - @Model["order"].Date</h3>
 <h5>Order Details:</h5>
 
 @if (@Model["order"].Description["pastries"] == 0)
 {
-  <p>0 pastries</p>
+  <p>0 pastries............$0</p>
 }
 @if (@Model["order"].Description["pastries"] == 1)
 {
-  <p>1 pastry</p>
+  <p>1 pastry............$2</p>
 }
 @if (@Model["order"].Description["pastries"] > 1)
 {
-<p>@Model["order"].Description["pastries"] pastries</p>
+<p>@Model["order"].Description["pastries"] pastries............$@Model["order"].Description["pastryTotal"]</p>
 }
 
 @if (@Model["order"].Description["bread"] == 0)
 {
-  <p>0 loaves of bread</p>
+  <p>0 loaves of bread............$0</p>
 }
 @if (@Model["order"].Description["bread"] == 1)
 {
-  <p>1 loaf of bread</p>
+  <p>1 loaf of bread............$5</p>
 }
 @if (@Model["order"].Description["bread"] > 1)
 {
-  <p>@Model["order"].Description["bread"] loaves of bread</p>
+  <p>@Model["order"].Description["bread"] loaves of bread............$@Model["order"].Description["breadTotal"]</p>
 }
 
-<h5>Order total: $@Model["order"].Total</h5>
+<h5>Order Total:</h5> <h3>$@Model["order"].Total</h3>
 <h5>@Model["order"].Status</h5>
 <h5>Vendor: @Model["vendor"].Name</h5>
 
