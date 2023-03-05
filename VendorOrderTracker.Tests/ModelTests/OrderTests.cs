@@ -56,7 +56,7 @@ namespace VendorOrderTracker.Tests
     public void AddOrderDescription_AddsDescriptionToSpecifiedOrdersDictionary_Dictionary()
     {
       Order newOrder = new Order("3/3/23", "unpaid");
-      Dictionary<string, int> orderDescription = new Dictionary<string, int> { {"pastries", 2 }, { "bread", 2 }, { "pastryTotal", 4 } };
+      Dictionary<string, int> orderDescription = new Dictionary<string, int> { {"pastries", 2 }, { "bread", 2 }, { "pastryTotal", 4 }, { "breadTotal", 10 } };
       newOrder.AddOrderDescription(2, 2);
       Dictionary<string, int> result = newOrder.Description;
       CollectionAssert.AreEqual(orderDescription, result);
@@ -106,6 +106,14 @@ namespace VendorOrderTracker.Tests
       newOrder.AddOrderDescription(4, 2);
       int result = newOrder.Description["pastryTotal"];
       Assert.AreEqual(6, result);
+    }
+    [TestMethod]
+    public void AddOrderDescription_AddsDescriptionToSpecifiedOrdersDictionaryIncludingBreadTotal_Int()
+    {
+      Order newOrder = new Order("3/3/23", "unpaid");
+      newOrder.AddOrderDescription(4, 3);
+      int result = newOrder.Description["breadTotal"];
+      Assert.AreEqual(10, result);
     }
   }
 }
