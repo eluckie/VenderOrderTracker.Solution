@@ -31,8 +31,8 @@ namespace VendorOrderTracker.Controllers
       order.Description["bread"] = breadCount;
       int pastryTotal = order.CalculatePastryTotal(pastryCount);
       int breadTotal = order.CalculateBreadTotal(breadCount);
-      order.Description["pastryCount"] = pastryTotal;
-      order.Description["breadCount"] = breadTotal;
+      order.Description["pastryTotal"] = pastryTotal;
+      order.Description["breadTotal"] = breadTotal;
       order.Total = pastryTotal + breadTotal;
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("order", order);

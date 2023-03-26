@@ -27,7 +27,9 @@ namespace VendorOrderTracker.Models
     }
     public static Vendor Find(int searchId)
     {
-      return _instances[searchId - 1];
+      return _instances.Find((e) => {
+      return e.Id == searchId;
+      });
     }
     public void AddOrder(Order order)
     {

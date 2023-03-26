@@ -96,8 +96,7 @@ _**/orders/statuschange**_ confirmation of order status update
 
 ## Known Bugs
 
-* If deleting an order from the list and then attempting to view order details for a later order, path does not update properly to account for 1 less order
-* ^ same issue with deleting a vendor from the list
+* No known bugs.
 
 ## Stretch Plans
 
